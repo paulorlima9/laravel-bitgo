@@ -3,41 +3,41 @@
 namespace PauloRLima9\LaravelBitgo;
 
 use Illuminate\Support\Collection;
-use PauloRLima9\LaravelBitgo\Contracts\BitgoAdapterContract;
-use PauloRLima9\LaravelBitgo\Contracts\WalletContract;
-use PauloRLima9\LaravelBitgo\Data\Requests\GenerateWallet;
-use PauloRLima9\LaravelBitgo\Data\Requests\TransferData;
 use PauloRLima9\LaravelBitgo\Data\Responses\Address;
-use PauloRLima9\LaravelBitgo\Data\Responses\Transfer;
-use PauloRLima9\LaravelBitgo\Data\Responses\Wallet as WalletData;
 use PauloRLima9\LaravelBitgo\Data\Responses\Webhook;
+use PauloRLima9\LaravelBitgo\Data\Responses\Transfer;
+use PauloRLima9\LaravelBitgo\Contracts\WalletContract;
+use PauloRLima9\LaravelBitgo\Data\Requests\TransferData;
+use PauloRLima9\LaravelBitgo\Data\Requests\GenerateWallet;
+use PauloRLima9\LaravelBitgo\Contracts\BitgoAdapterContract;
+use PauloRLima9\LaravelBitgo\Data\Responses\Wallet as WalletData;
 
 class Wallet extends WalletData implements WalletContract
 {
     public ?string $id;
 
     /**
-     * Ids of users with access to the wallet
+     * Ids dos usuários com acesso à carteira
      */
     public array $users;
 
     /**
-     * Name of the blockchain the wallet is on
+     * Nome da blockchain na qual a carteira está localizada
      */
     public string $coin;
 
     /**
-     * Name the user assigned to the wallet
+     * Nome atribuído pelo usuário à carteira
      */
     public string $label;
 
     /**
-     * Number of signatures required for the wallet to send
+     * Número de assinaturas necessárias para a carteira enviar
      */
     public int $m;
 
     /**
-     * Number of signers on the wallet
+     * Número de signatários na carteira
      */
     public int $n;
 
@@ -49,7 +49,7 @@ class Wallet extends WalletData implements WalletContract
     public array $keySignatures;
 
     /**
-     * Tags set on the wallet
+     * Tags atribuídas à carteira
      *
      * @var array<string>
      */
@@ -58,77 +58,77 @@ class Wallet extends WalletData implements WalletContract
     public array $receiveAddress;
 
     /**
-     * Wallet balance as number
+     * Saldo da carteira como número
      */
     public int $balance;
 
     /**
-     * Wallet balance as string
+     * Saldo da carteira como string
      */
     public string $balanceString;
 
     /**
-     * Confirmed wallet balance as number
+     * Saldo confirmado da carteira como número
      */
     public int $confirmedBalance;
 
     /**
-     * Confirmed wallet balance as string
+     * Saldo confirmado da carteira como string
      */
     public string $confirmedBalanceString;
 
     /**
-     * Spendable wallet balance as number
+     * Saldo gastável da carteira como número
      */
     public int $spendableBalance;
 
     /**
-     * Spendable wallet balance as string
+     * Saldo gastável da carteira como string
      */
     public string $spendableBalanceString;
 
     /**
-     * Flag which indicates the wallet has been deleted
+     * Indica se a carteira foi excluída
      */
     public bool $deleted;
 
     /**
-     * Flag for identifying cold wallets
+     * Identificação de carteiras frias
      */
     public bool $isCold;
 
     /**
-     * Freeze state (used to stop the wallet from spending)
+     * Estado de congelamento (usado para impedir a carteira de gastar)
      */
     public array $freezy;
 
     /**
-     * Flag for disabling wallet transaction notifications
+     * Indicador para desativar notificações de transações da carteira
      */
     public bool $disableTransactionNotifications;
 
     /**
-     * Admin data (wallet policies)
+     * Dados de administração (políticas da carteira)
      */
     public array $admin;
 
     /**
-     * Flag for allowing signing with backup key
+     * Indicador para permitir assinatura com chave de backup
      */
     public int $approvalsRequired;
 
     /**
-     * Pending approvals on the wallet
+     * Aprovações pendentes na carteira
      */
     public array $pendingApprovals;
 
     /**
-     * Flag for allowing signing with backup key
+     * Indicador para permitir assinatura com chave de backup
      */
     public bool $allowBackupKeySigning;
 
     /**
-     * Coin-specific data
+     * Dados específicos da moeda
      */
     public array $coinSpecific;
 
@@ -138,26 +138,26 @@ class Wallet extends WalletData implements WalletContract
     public array $clientFlags;
 
     /**
-     * Flag indicating whether this wallet's user key is recoverable with the passphrase held by the user.
+     * Indica se a chave do usuário desta carteira é recuperável com a frase de acesso mantida pelo usuário.
      */
     public bool $recoverable;
 
     /**
-     * Time when this wallet was created
+     * Data e hora de criação desta carteira
      *
      * @var string date-time
      */
     public string $startDate;
 
     /**
-     * Flag indicating that this wallet is large (more than 100,000 addresses).
-     * If this is set, some APIs may omit properties which are expensive to calculate
-     * for wallets with many addresses (for example, the total address counts returned by the List Addresses API).
+     * Indica que esta carteira é grande (mais de 100.000 endereços).
+     * Se isso estiver definido, algumas APIs podem omitir propriedades que são caras de calcular
+     * para carteiras com muitos endereços (por exemplo, a contagem total de endereços retornada pela API de Listagem de Endereços).
      */
     public bool $hasLargeNumberOfAddresses;
 
     /**
-     * Custom configuration options for this wallet
+     * Opções de configuração personalizadas para esta carteira
      */
     public array $config;
 

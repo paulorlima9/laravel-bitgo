@@ -12,23 +12,23 @@ class GenerateWallet extends Data
     public string $label;
 
     /***
-     * Passphrase to be used to encrypt the user key on the wallet
+     * Senha a ser usada para criptografar a chave do usuário na carteira
      * @var string
      */
     public string $passphrase;
 
     /**
-     * User provided public key
+     * Chave pública fornecida pelo usuário
      */
     public string $userKey;
 
     /**
-     * public part of a key pair
+     * Parte pública de um par de chaves
      */
     public string $backupXpub;
 
     /**
-     * Optional key recovery service to provide and store the backup key
+     * Serviço opcional de recuperação de chave para fornecer e armazenar a chave de backup
      */
     public string $backupXpubProvider;
 
@@ -38,34 +38,34 @@ class GenerateWallet extends Data
     public string $enterprise;
 
     /**
-     * Flag for disabling wallet transaction notifications
+     * Sinalizador para desativar notificações de transação da carteira
      */
     public bool $disableTransactionNotifications;
 
     /**
-     * The passphrase used for decrypting the encrypted user private key during wallet recovery
+     * A senha usada para descriptografar a chave privada do usuário durante a recuperação da carteira
      */
     public string $passcodeEncryptionCode;
 
     /**
-     * Seed used to derive an extended user key for a cold wallet
+     * Semente usada para derivar uma chave de usuário estendida para uma carteira fria
      */
     public string $coldDerivationSeed;
 
     /**
-     * Gas price to use when deploying an Ethereum wallet
+     * Preço do gás a ser usado ao implantar uma carteira Ethereum
      */
     public int $gasPrice;
 
     /**
-     * Flag for preventing KRS from sending email after creating backup key
+     * Sinalizador para evitar que o KRS envie e-mails após criar a chave de backup
      */
     public bool $disableKRSEmail;
 
     /**
-     * (ETH only) Specify the wallet creation contract version used when creating a wallet contract.
-     * Use 0 for the old wallet creation,
-     * 1 for the new wallet creation, where it is only deployed upon receiving funds.
+     * (Apenas ETH) Especifique a versão do contrato de criação da carteira usada ao criar um contrato de carteira.
+     * Use 0 para a antiga criação de carteira,
+     * 1 para a nova criação de carteira, onde ela só é implantada ao receber fundos.
      */
     public int $walletVersion = 1;
 }

@@ -7,12 +7,12 @@ use PauloRLima9\LaravelBitgo\Data\Data;
 class User extends Data
 {
     /**
-     * id of the user
+     * ID do usuário
      */
     public string $user;
 
     /**
-     * Array of permissions for the user
+     * Array de permissões para o usuário
      *
      * @var array<string>
      */

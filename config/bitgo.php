@@ -3,11 +3,11 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Use Mocks
+    | Utilizar Mocks
     |--------------------------------------------------------------------------
     |
-    | This option determines if the application should use mocks for Bitgo
-    | API calls. This is useful for testing purposes.
+    | Esta opção determina se a aplicação deve utilizar mocks para chamadas
+    | de API do Bitgo. Isso é útil para fins de teste.
     |
     */
     'use_mocks' => env('BITGO_USE_MOCKS', false),
@@ -17,38 +17,38 @@ return [
     | Testnet
     |--------------------------------------------------------------------------
     |
-    | This option determines if the application should use the Bitgo testnet
-    | instead of the mainnet. Set this to true for testing and development.
+    | Esta opção determina se a aplicação deve utilizar o testnet do Bitgo
+    | em vez do mainnet. Defina como true para testes e desenvolvimento.
     |
     */
     'testnet' => env('BITGO_TESTNET', true),
 
     /*
     |--------------------------------------------------------------------------
-    | API Key
+    | Chave da API
     |--------------------------------------------------------------------------
     |
-    | This option sets the API key for the Bitgo API.
+    | Esta opção define a chave da API para a API do Bitgo.
     |
     */
     'api_key' => env('BITGO_API_KEY'),
 
     /*
     |--------------------------------------------------------------------------
-    | API Prefix
+    | Prefixo da API
     |--------------------------------------------------------------------------
     |
-    | This option sets the API prefix for the Bitgo API.
+    | Esta opção define o prefixo da API para a API do Bitgo.
     |
     */
     'v2_api_prefix' => 'api/v2/',
 
     /*
     |--------------------------------------------------------------------------
-    | Testnet and Mainnet API URLs
+    | URLs da API para Testnet e Mainnet
     |--------------------------------------------------------------------------
     |
-    | These options set the API URLs for the Bitgo testnet and mainnet.
+    | Estas opções definem as URLs da API para o testnet e mainnet do Bitgo.
     |
     */
     'testnet_api_url' => 'https://app.bitgo-test.com',
@@ -56,30 +56,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Express API URL
+    | URL da API Express
     |--------------------------------------------------------------------------
     |
-    | This option sets the Express API URL for the Bitgo API.
+    | Esta opção define a URL da API Express para a API do Bitgo.
     |
     */
     'express_api_url' => env('BITGO_EXPRESS_API_URL'),
 
     /*
     |--------------------------------------------------------------------------
-    | Default Coin
+    | Moeda Padrão
     |--------------------------------------------------------------------------
     |
-    | This option sets the default coin for Bitgo API calls.
+    | Esta opção define a moeda padrão para chamadas de API do Bitgo.
     |
     */
     'default_coin' => env('BITGO_DEFAULT_COIN', 'tbtc'),
 
     /*
     |--------------------------------------------------------------------------
-    | Webhook Callback URL
+    | URL de Callback do Webhook
     |--------------------------------------------------------------------------
     |
-    | This option sets the webhook callback URL for the Bitgo API.
+    | Esta opção define a URL de callback do webhook para a API do Bitgo.
     |
     */
     'webhook_callback_url' => env('BITGO_WEBHOOK_CALLBACK'),

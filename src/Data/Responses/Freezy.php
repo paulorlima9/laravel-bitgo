@@ -7,16 +7,16 @@ use PauloRLima9\LaravelBitgo\Data\Data;
 class Freezy extends Data
 {
     /**
-     * Time when the wallet becomes frozen
+     * Tempo em que a carteira se torna congelada
      *
-     * @var string date-time
+     * @var string data e hora
      */
     public string $time;
 
     /**
-     * Time when the wallet is unfrozen and allowed to spend
+     * Tempo em que a carteira é descongelada e permitida para gastar
      *
-     * @var string date-time
+     * @var string data e hora
      */
     public string $expires;
 }

@@ -5,7 +5,7 @@ namespace PauloRLima9\LaravelBitgo\Data;
 abstract class Data
 {
     /**
-     * convert data from array to object
+     * Converte dados de array para objeto
      */
     public static function fromArray(array $payload): static
     {
@@ -21,7 +21,7 @@ abstract class Data
     }
 
     /**
-     * convert data object to array
+     * Converte objeto de dados para array
      */
     public function toArray(): array
     {

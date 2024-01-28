@@ -3,6 +3,7 @@
 namespace PauloRLima9\LaravelBitgo\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use PauloRLima9\LaravelBitgo\Wallet as FacadeWallet;
 
 /**
  * @method static \PauloRLima9\LaravelBitgo\Wallet init(string $coin, string $id = null)
@@ -12,6 +13,6 @@ class Wallet extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \PauloRLima9\LaravelBitgo\Wallet::class;
+        return FacadeWallet::class;
     }
 }

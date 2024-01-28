@@ -3,7 +3,9 @@
 namespace PauloRLima9\LaravelBitgo;
 
 use Illuminate\Support\Facades\Http;
+use PauloRLima9\LaravelBitgo\Wallet;
 use Illuminate\Support\ServiceProvider;
+use PauloRLima9\LaravelBitgo\ExchangeRate;
 use PauloRLima9\LaravelBitgo\Adapters\BitgoAdapter;
 use PauloRLima9\LaravelBitgo\Contracts\BitgoAdapterContract;
 
@@ -17,10 +19,7 @@ class BitgoServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/bitgo.php',
-            'bitgo'
-        );
+        $this->mergeConfigFrom(__DIR__ . '/../config/bitgo.php', 'bitgo');
 
         $this->registerBitgoAdapter();
         $this->registerWallet();
@@ -41,9 +40,7 @@ class BitgoServiceProvider extends ServiceProvider
     protected function registerWallet(): void
     {
         $this->app->bind('Wallet', function () {
-            return new Wallet(
-                app(BitgoAdapterContract::class)
-            );
+            return new Wallet(app(BitgoAdapterContract::class));
         });
     }
 
@@ -53,9 +50,7 @@ class BitgoServiceProvider extends ServiceProvider
     protected function registerExchangeRate(): void
     {
         $this->app->bind('ExchangeRate', function () {
-            return new ExchangeRate(
-                app(BitgoAdapterContract::class)
-            );
+            return new ExchangeRate(app(BitgoAdapterContract::class));
         });
     }
 
@@ -66,9 +61,12 @@ class BitgoServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/bitgo.php' => config_path('bitgo.php'),
-        ], 'bitgo-config');
+        $this->publishes(
+            [
+                __DIR__ . '/../config/bitgo.php' => config_path('bitgo.php'),
+            ],
+            'bitgo-config'
+        );
 
         $this->registerHttpMacros();
     }
@@ -82,13 +80,13 @@ class BitgoServiceProvider extends ServiceProvider
 
         Http::macro('bitgoApi', function () use ($apiUrl) {
             return Http::withHeaders([
-                'Authorization' => 'Bearer '.config('bitgo.api_key'),
+                'Authorization' => 'Bearer ' . config('bitgo.api_key'),
             ])->baseUrl("{$apiUrl}");
         });
 
         Http::macro('bitgoExpressApi', function () {
             return Http::withHeaders([
-                'Authorization' => 'Bearer '.config('bitgo.api_key'),
+                'Authorization' => 'Bearer ' . config('bitgo.api_key'),
             ])->baseUrl(config('bitgo.express_api_url'));
         });
     }

@@ -7,12 +7,12 @@ use PauloRLima9\LaravelBitgo\Data\Data;
 class KeySignature extends Data
 {
     /**
-     * Signature for the backup pub
+     * Assinatura para o pub de backup
      */
     public string $backupPub;
 
     /**
-     * Signature for the BitGo pub
+     * Assinatura para o pub do BitGo
      */
     public string $bitgoPub;
 }

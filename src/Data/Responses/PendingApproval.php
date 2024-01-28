@@ -7,14 +7,14 @@ use PauloRLima9\LaravelBitgo\Data\Data;
 class PendingApproval extends Data
 {
     /**
-     * Time when the wallet becomes frozen
+     * Tempo em que a carteira fica congelada
      *
      * @var string (Id) ^[0-9a-f]{32}$
      */
     public string $id;
 
     /**
-     * A cryptocurrency or token ticker symbol.
+     * Um símbolo de ticker de criptomoeda ou token.
      */
     public string $coin;
 
@@ -43,12 +43,12 @@ class PendingApproval extends Data
     public array $state;
 
     /**
-     * What kind of entity the Pending Approval is tied to
+     * Tipo de entidade à qual a Aprovação Pendente está vinculada
      */
     public string $scope;
 
     /**
-     * All the Users who should see this Pending Approval
+     * Todos os usuários que devem ver esta Aprovação Pendente
      */
     public string $userIds;
 
